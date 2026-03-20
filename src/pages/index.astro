@@ -11,7 +11,9 @@ import Layout from '../layouts/Layout.astro';
 		["abc"].map((item) => {
 			try {
 				// We can't return this HTML component within a try-catch for rust compiler only
+				// Comment this line and uncomment the next one to see the error disappear
 				return (<Welcome />);
+				// return "";
 			} catch (error) {
 				console.error(error);
 				return item;
