@@ -7,5 +7,16 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
+	{
+		["abc"].map((item) => {
+			try {
+				// We can't return this HTML component within a try-catch for rust compiler only
+				return (<Welcome />);
+			} catch (error) {
+				console.error(error);
+				return item;
+			}
+		})
+	}
 	<Welcome />
 </Layout>
